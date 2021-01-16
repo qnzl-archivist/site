@@ -1,0 +1,6 @@
+#!/bin/bash
+
+rsync -rave "ssh -i ~/.ssh/qnzl" infra/archivist.conf root@45.76.2.252:/etc/supervisor/conf.d;
+rsync -rave "ssh -i ~/.ssh/qnzl" infra/archivist_http root@45.76.2.252:/etc/nginx/sites-available;
+
+ssh root@45.76.2.252 -i ~/.ssh/qnzl "ln -s /etc/nginx/sites-available/archivist_http /etc/nginx/sites-enabled/ && sudo service nginx reload && sudo service nginx restart && sudo supervisorctl reload && sudo supervisorctl restart archivist && certbot --nginx"

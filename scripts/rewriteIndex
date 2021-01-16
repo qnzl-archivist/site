@@ -1,0 +1,19 @@
+#!/usr/bin/env node
+
+const Mustache = require('mustache')
+const crypto = require('crypto')
+const fs = require('fs')
+
+const hash = crypto.randomBytes(20).toString('hex')
+console.log("Generated hash:", hash)
+
+fs.readFile('./public/index_before.html', 'utf8', (err, template) => {
+  console.log("Loaded template")
+  template = Mustache.render(template, { hash: hash })
+
+  console.log("Writing to index.html")
+  fs.writeFile('./public/index.html', template, () => {
+      process.exit(0)
+  })
+})
+

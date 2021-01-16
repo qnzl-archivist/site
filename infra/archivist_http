@@ -1,0 +1,15 @@
+server {
+  if ($host = www.archivist.qnzl.co) {
+    return 301 https://$host$request_uri;
+  }
+
+  if ($host = archivist.qnzl.co) {
+      return 301 https://$host$request_uri;
+  }
+
+  server_name www.archivist.qnzl.co archivist.qnzl.co;
+
+  location ~ {
+    proxy_pass http://127.0.0.1:3081;
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "short_name": "PhonePrivacy",
+  "name": "PhonePrivacy",
+  "icons": [
+    {
+      "src": "/img/phone-icon.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/?source=pwa",
+  "background_color": "#9363ff",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#9363ff"
+}

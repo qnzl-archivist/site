@@ -1,0 +1,18 @@
+* {
+  font-display: fallback;
+  font-family: 'Nunito', sans-serif;
+}
+
+div {
+  font-display: fallback;
+  font-family: 'Nunito', sans-serif;
+}
+
+.header-text {
+  font-display: fallback;
+  font-family: 'Nunito', sans-serif;
+}
+
+.brand-color {
+  background-color:#9363ff;
+}
