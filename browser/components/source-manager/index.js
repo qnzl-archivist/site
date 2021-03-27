@@ -21,6 +21,10 @@ module.exports = (state, emit) => {
 
             const service = state.services[serviceName]
 
+            if (!service) {
+              return
+            }
+
             service.nextScheduled = nextScheduled
             service.backupInProgress = backupInProgress && backupInProgress.date
             service.backups = backups
